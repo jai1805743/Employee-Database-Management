@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+  <title>Employee Database Management System</title>
+</head>
+
+<body class=" px-2 relative font-serif">
+  <div id="app">
+    <!-- Header -->
+    <header class="flex flex-row  justify-center justify-between items-center  py-4 bg-sky-200">
+      <h1 class="lg:text-3xl text-sm font-bold font-serif ml-5">Employee Database Management</h1>
+      <button id="openModelBtn"    class="lg:px-4 lg:py-2 p-2 rounded-lg font-sans text-xs font-semibold bg-red-300 hover:bg-red-400 mr-5">
+        <i class="fa-solid fa-plus"></i>                Add
+      </button>
+    </header>
+
+    <!-- Employee Section -->
+    <div class="lg:flex lg:flex-row  gap-4  bg-gradient-to-t from-gray-50 to-purple-50 m-5 ">
+      <!-- Employee List -->
+      <div class="lg:w-1/3 w-full border border-black lg:p-2  h-[450px] overflow-y-scroll flex flex-col">
+        <span class="text-center font-semibold border-b border-black pb-2 mb-2">
+          Employee List
+        </span>
+        <div class="flex flex-col space-y-2" id="employeelist">
+          <!-- Dynamic employee list items go here -->
+          <!-- Example Item  -->
+          <!-- <div class="cursor-pointer px-4 py-2 bg-gray-100 hover:bg-gray-300 rounded flex justify-between items-center">
+            John Doe
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Single Employee Info -->
+      <div class="lg:w-2/3 w-full  border border-black lg:p-2 lg:my-0 my-5  h-[450px] overflow-y-scroll flex flex-col">
+        <div class="text-center font-semibold border-b border-black pb-2 mb-2">
+          Employee Information
+        </div>
+        <div class="flex flex-col items-center gap-2" id="employeeinfo">
+          <!-- Example content -->
+          <!-- <h2 class="text-2xl uppercase">John Doe</h2>
+          <img src="https://via.placeholder.com/250" class="w-[250px] h-[250px] object-contain rounded-full" /> -->
+        </div>  
+      </div>
+    </div>
+
+    <!-- Add Employee Modal -->
+    <div    id="employeeModel"   class="hidden fixed inset-0 bg-[rgba(141,141,141,0.541)] flex justify-center items-center z-50 ">
+              <form id="employeeform" action="https://script.google.com/macros/s/AKfycbyT9fWXWln8TicCdNHk6HZmEKyv8OUVWDOMNk_0yN0Wn0aI9ACu5owZRlHTvYap1XduCQ/exec" method="POST"  class="lg:w-[400px] w-[350px] bg-white shadow-2xl p-6  rounded text-center flex flex-col gap-2 ">
+
+        <div class="text-lg font-semibold">Add a new Employee</div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <input type="text" name="firstName" placeholder="First Name" required class="px-3 py-2 border border-gray-200 rounded" />
+          <input type="text" name="lastName" placeholder="Last Name" required class="px-3 py-2 border border-gray-200 rounded" />
+        </div>
+
+        <input type="file"  name="imageFile" accept="image/*"  placeholder="" class="px-3 py-2 border border-gray-200 rounded" />
+        <input type="email" name="email" placeholder="Email" required class="px-3 py-2 border border-gray-200 rounded" />
+         <input type="number" name="age" placeholder="age" required class="px-3 py-2 border border-gray-200 rounded" />
+        <input type="number" name="contactNumber" placeholder="Contact" required class="px-3 py-2 border border-gray-200 rounded" />
+        <input type="number" name="salary" placeholder="Salary" required class="px-3 py-2 border border-gray-200 rounded" />
+        <input type="text" name="address" placeholder="Address" required class="px-3 py-2 border border-gray-200 rounded" />
+        <input type="date" name="dob" required class="px-3 py-2 border border-gray-200 rounded" />
+
+        <input id="submit" type="submit" value="Submit" class="px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded cursor-pointer" />
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="sheet.js"></script>
+</body>
+
+</html>
